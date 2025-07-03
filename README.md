@@ -4,7 +4,7 @@ Este repositorio contiene ejemplos y recursos para ejercicios de desarrollo.
 
 ## onepage
 
-Carpeta `onepage` con un sitio one-page de ejemplo. La página principal ahora muestra un portafolio personal con navegación a secciones como Home, About, Resume, Services, Skills, Projects, My Blog y Contact. Se usa Tailwind CSS y JavaScript para animaciones y desplazamiento suave.
+Carpeta `onepage` con un sitio one-page de ejemplo. La página principal ahora muestra un portafolio personal con navegación a secciones como Home, About, Resume, Services, Skills, **Cursos**, **Portafolio**, My Blog y Contact. Se usa Tailwind CSS y JavaScript para animaciones y desplazamiento suave. La sección de cursos presenta tarjetas con un botón de compra que redirige a `pago.html`, mientras que el portafolio cuenta con filtros por categoría y efecto hover.
 
 También se añadió un servidor Express (`server.js`) que recibe capturas de pantalla de pagos y las guarda en la carpeta `validar_pagos`. Para ejecutarlo es necesario instalar las dependencias y luego iniciar el servidor:
 

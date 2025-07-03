@@ -43,7 +43,8 @@
           <li><a href="#resume" class="hover:text-accentyellow">Resume</a></li>
           <li><a href="#services" class="hover:text-accentyellow">Services</a></li>
           <li><a href="#skills" class="hover:text-accentyellow">Skills</a></li>
-          <li><a href="#projects" class="hover:text-accentyellow">Projects</a></li>
+          <li><a href="#cursos" class="hover:text-accentyellow">Cursos</a></li>
+          <li><a href="#portfolio" class="hover:text-accentyellow">Portafolio</a></li>
           <li><a href="#blog" class="hover:text-accentyellow">My Blog</a></li>
           <li><a href="#contact" class="hover:text-accentyellow">Contact</a></li>
         </ul>
@@ -63,7 +64,7 @@
         </h1>
         <div class="flex space-x-4">
           <a href="#contact" class="bg-accentyellow text-black px-6 py-3 rounded font-semibold hover:opacity-90 transition">HIRE ME</a>
-          <a href="#projects" class="border border-white px-6 py-3 rounded font-semibold hover:bg-white hover:text-black transition">MY WORKS</a>
+          <a href="#portfolio" class="border border-white px-6 py-3 rounded font-semibold hover:bg-white hover:text-black transition">MY WORKS</a>
         </div>
       </div>
       <!-- Image -->
@@ -105,14 +106,105 @@
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-20 bg-gray-900 reveal">
+  <!-- Cursos -->
+  <section id="cursos" class="py-20 bg-gray-900 reveal">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-poppins font-bold mb-8">Projects</h2>
+      <h2 class="text-3xl font-poppins font-bold mb-8">Cursos</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Curso 1 -->
+        <div class="bg-white text-black rounded shadow overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Curso 1" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Curso 1</h3>
+            <p class="text-gray-700 mb-4">Descripción corta del curso.</p>
+            <div class="flex space-x-2">
+              <a href="#" class="bg-electric text-white px-4 py-2 rounded hover:opacity-90">Ver más</a>
+              <a href="pago.html" class="bg-magenta text-white px-4 py-2 rounded hover:bg-electric">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <!-- Curso 2 -->
+        <div class="bg-white text-black rounded shadow overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Curso 2" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Curso 2</h3>
+            <p class="text-gray-700 mb-4">Descripción corta del curso.</p>
+            <div class="flex space-x-2">
+              <a href="#" class="bg-electric text-white px-4 py-2 rounded hover:opacity-90">Ver más</a>
+              <a href="pago.html" class="bg-magenta text-white px-4 py-2 rounded hover:bg-electric">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <!-- Curso 3 -->
+        <div class="bg-white text-black rounded shadow overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Curso 3" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Curso 3</h3>
+            <p class="text-gray-700 mb-4">Descripción corta del curso.</p>
+            <div class="flex space-x-2">
+              <a href="#" class="bg-electric text-white px-4 py-2 rounded hover:opacity-90">Ver más</a>
+              <a href="pago.html" class="bg-magenta text-white px-4 py-2 rounded hover:bg-electric">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portafolio -->
+  <section id="portfolio" class="py-20 bg-gray-900 reveal">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-poppins font-bold mb-8">Portafolio</h2>
+      <!-- Filtros -->
+      <div class="flex space-x-4 mb-8">
+        <button class="filter-btn bg-white text-black px-4 py-2 rounded" data-filter="all">Todos</button>
+        <button class="filter-btn bg-white text-black px-4 py-2 rounded" data-filter="web">Web</button>
+        <button class="filter-btn bg-white text-black px-4 py-2 rounded" data-filter="mobile">Móvil</button>
+        <button class="filter-btn bg-white text-black px-4 py-2 rounded" data-filter="design">Diseño</button>
+      </div>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div class="bg-white text-black rounded shadow p-4">Proyecto 1</div>
-        <div class="bg-white text-black rounded shadow p-4">Proyecto 2</div>
-        <div class="bg-white text-black rounded shadow p-4">Proyecto 3</div>
+        <!-- Proyecto 1 -->
+        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="web">
+          <img src="https://via.placeholder.com/600x400" alt="Proyecto web" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4">
+            <h3 class="text-xl font-bold">Proyecto Web</h3>
+          </div>
+        </div>
+        <!-- Proyecto 2 -->
+        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="mobile">
+          <img src="https://via.placeholder.com/600x400" alt="Proyecto móvil" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4">
+            <h3 class="text-xl font-bold">Proyecto Móvil</h3>
+          </div>
+        </div>
+        <!-- Proyecto 3 -->
+        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="design">
+          <img src="https://via.placeholder.com/600x400" alt="Proyecto diseño" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4">
+            <h3 class="text-xl font-bold">Proyecto Diseño</h3>
+          </div>
+        </div>
+        <!-- Proyecto 4 -->
+        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="web">
+          <img src="https://via.placeholder.com/600x400" alt="Proyecto web" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4">
+            <h3 class="text-xl font-bold">Proyecto Web 2</h3>
+          </div>
+        </div>
+        <!-- Proyecto 5 -->
+        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="mobile">
+          <img src="https://via.placeholder.com/600x400" alt="Proyecto móvil" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4">
+            <h3 class="text-xl font-bold">Proyecto Móvil 2</h3>
+          </div>
+        </div>
+        <!-- Proyecto 6 -->
+        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="design">
+          <img src="https://via.placeholder.com/600x400" alt="Proyecto diseño" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="p-4">
+            <h3 class="text-xl font-bold">Proyecto Diseño 2</h3>
+          </div>
+        </div>
       </div>
     </div>
   </section>

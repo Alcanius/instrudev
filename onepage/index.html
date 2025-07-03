@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos Profesionales Online</title>
+  <!-- Importación de fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Configuración de Tailwind CSS vía CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            electric: '#1e90ff',
+            magenta: '#ff2d95',
+            accentyellow: '#ffd700'
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="text-gray-800 scroll-smooth">
+  <!-- Header fijo con navegación -->
+  <header class="fixed top-0 w-full bg-white shadow z-10">
+    <nav class="container mx-auto flex items-center justify-between p-4">
+      <a href="#" class="text-2xl font-poppins text-electric font-bold">CursosOnline</a>
+      <ul class="flex space-x-4 font-inter">
+        <li><a href="#inicio" class="hover:text-magenta">Inicio</a></li>
+        <li><a href="#cursos" class="hover:text-magenta">Cursos</a></li>
+        <li><a href="#portafolio" class="hover:text-magenta">Portafolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección de inicio/hero -->
+  <section id="inicio" class="h-screen flex items-center justify-center bg-gradient-to-br from-electric via-magenta to-accentyellow text-white">
+    <div class="text-center space-y-4">
+      <h1 class="text-5xl md:text-6xl font-poppins font-bold">Aprende con los mejores cursos</h1>
+      <p class="text-xl md:text-2xl">Impulsa tu carrera profesional hoy</p>
+      <button class="bg-white text-electric font-bold px-6 py-3 rounded shadow hover:bg-accentyellow transition-colors">Únete ahora</button>
+    </div>
+  </section>
+
+  <!-- Sección de cursos -->
+  <section id="cursos" class="container mx-auto py-16 px-4">
+    <h2 class="text-3xl font-poppins font-bold text-center mb-8">Nuestros Cursos</h2>
+    <!-- Grid de tarjetas de cursos -->
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Tarjeta de curso -->
+      <div class="bg-white rounded shadow hover:shadow-lg transition p-4 reveal">
+        <img src="https://via.placeholder.com/400x200" alt="Curso 1" class="rounded mb-4">
+        <h3 class="text-xl font-semibold mb-2">Curso 1</h3>
+        <p class="mb-4">Breve descripción del curso.</p>
+        <button class="text-magenta hover:text-electric">Ver más</button>
+      </div>
+      <!-- Repetir tarjetas -->
+      <div class="bg-white rounded shadow hover:shadow-lg transition p-4 reveal">
+        <img src="https://via.placeholder.com/400x200" alt="Curso 2" class="rounded mb-4">
+        <h3 class="text-xl font-semibold mb-2">Curso 2</h3>
+        <p class="mb-4">Breve descripción del curso.</p>
+        <button class="text-magenta hover:text-electric">Ver más</button>
+      </div>
+      <div class="bg-white rounded shadow hover:shadow-lg transition p-4 reveal">
+        <img src="https://via.placeholder.com/400x200" alt="Curso 3" class="rounded mb-4">
+        <h3 class="text-xl font-semibold mb-2">Curso 3</h3>
+        <p class="mb-4">Breve descripción del curso.</p>
+        <button class="text-magenta hover:text-electric">Ver más</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de portafolio con filtros -->
+  <section id="portafolio" class="bg-gray-50 py-16 px-4">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-poppins font-bold text-center mb-8">Portafolio</h2>
+      <!-- Controles de filtrado -->
+      <div class="flex justify-center space-x-4 mb-8">
+        <button class="filter-btn bg-electric text-white px-4 py-2 rounded" data-filter="all">Todos</button>
+        <button class="filter-btn bg-electric text-white px-4 py-2 rounded" data-filter="web">Web</button>
+        <button class="filter-btn bg-electric text-white px-4 py-2 rounded" data-filter="mobile">Móvil</button>
+      </div>
+      <!-- Galería de proyectos -->
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="portfolio-item bg-white rounded shadow overflow-hidden reveal" data-category="web">
+          <img src="https://via.placeholder.com/400x200" alt="Proyecto Web" class="w-full">
+        </div>
+        <div class="portfolio-item bg-white rounded shadow overflow-hidden reveal" data-category="mobile">
+          <img src="https://via.placeholder.com/400x200" alt="Proyecto Móvil" class="w-full">
+        </div>
+        <div class="portfolio-item bg-white rounded shadow overflow-hidden reveal" data-category="web">
+          <img src="https://via.placeholder.com/400x200" alt="Proyecto Web" class="w-full">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>

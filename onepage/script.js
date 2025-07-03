@@ -69,3 +69,21 @@ if (bancoSelect) {
     }
   });
 }
+
+// Animación de barras de habilidad
+const skillObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bar = entry.target;
+      const pct = bar.getAttribute('data-percentage');
+      bar.style.width = pct + '%';
+      skillObserver.unobserve(bar);
+    }
+  });
+}, { threshold: 0.6 });
+
+document.querySelectorAll('[data-percentage]').forEach(bar => {
+  bar.style.width = '0';
+  bar.classList.add('transition-all', 'duration-700');
+  skillObserver.observe(bar);
+});

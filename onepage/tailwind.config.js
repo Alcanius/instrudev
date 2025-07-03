@@ -5,7 +5,7 @@ module.exports = {
       colors: {
         electric: '#1e90ff',
         magenta: '#ff2d95',
-        accentyellow: '#ffd700'
+        accentyellow: '#FFC107'
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

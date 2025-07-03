@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursos Profesionales Online</title>
-  <!-- Importación de fuentes -->
+  <title>Instrudev Portfolio</title>
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <!-- Configuración de Tailwind CSS vía CDN -->
+  <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -17,11 +17,11 @@
           colors: {
             electric: '#1e90ff',
             magenta: '#ff2d95',
-            accentyellow: '#ffd700'
+            accentyellow: '#FFC107'
           },
           fontFamily: {
             poppins: ['Poppins', 'sans-serif'],
-            inter: ['Inter', 'sans-serif'],
+            inter: ['Inter', 'sans-serif']
           }
         }
       }
@@ -31,91 +31,115 @@
     body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body class="text-gray-800 scroll-smooth">
-  <!-- Header fijo con navegación -->
-  <header class="fixed top-0 w-full bg-white shadow z-10">
-    <nav class="container mx-auto flex items-center justify-between p-4">
-      <a href="#" class="text-2xl font-poppins text-electric font-bold">CursosOnline</a>
-      <ul class="flex space-x-4 font-inter">
-        <li><a href="#inicio" class="hover:text-magenta">Inicio</a></li>
-        <li><a href="#cursos" class="hover:text-magenta">Cursos</a></li>
-        <li><a href="#portafolio" class="hover:text-magenta">Portafolio</a></li>
-      </ul>
-    </nav>
+<body class="bg-black text-white scroll-smooth">
+  <!-- Header and navigation -->
+  <header class="fixed top-0 w-full bg-black bg-opacity-80 z-10">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <a href="#home" class="text-2xl font-poppins font-bold text-accentyellow">INSTRUDEV</a>
+      <nav>
+        <ul class="flex space-x-4 font-inter text-sm md:text-base">
+          <li><a href="#home" class="hover:text-accentyellow">Home</a></li>
+          <li><a href="#about" class="hover:text-accentyellow">About</a></li>
+          <li><a href="#resume" class="hover:text-accentyellow">Resume</a></li>
+          <li><a href="#services" class="hover:text-accentyellow">Services</a></li>
+          <li><a href="#skills" class="hover:text-accentyellow">Skills</a></li>
+          <li><a href="#projects" class="hover:text-accentyellow">Projects</a></li>
+          <li><a href="#blog" class="hover:text-accentyellow">My Blog</a></li>
+          <li><a href="#contact" class="hover:text-accentyellow">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Sección de inicio/hero -->
-  <section id="inicio" class="h-screen flex items-center justify-center bg-gradient-to-br from-electric via-magenta to-accentyellow text-white">
-    <div class="text-center space-y-4">
-      <h1 class="text-5xl md:text-6xl font-poppins font-bold">Aprende con los mejores cursos</h1>
-      <p class="text-xl md:text-2xl">Impulsa tu carrera profesional hoy</p>
-      <button class="bg-white text-electric font-bold px-6 py-3 rounded shadow hover:bg-accentyellow transition-colors">Únete ahora</button>
-    </div>
-  </section>
-
-  <!-- Sección de cursos -->
-  <section id="cursos" class="container mx-auto py-16 px-4">
-    <h2 class="text-3xl font-poppins font-bold text-center mb-8">Nuestros Cursos</h2>
-    <!-- Grid de tarjetas de cursos -->
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Tarjeta de curso -->
-      <div class="bg-white rounded shadow hover:shadow-lg transition p-4 reveal">
-        <img src="https://via.placeholder.com/400x200" alt="Curso 1" class="rounded mb-4">
-        <h3 class="text-xl font-semibold mb-2">Curso 1</h3>
-        <p class="mb-4">Breve descripción del curso.</p>
-        <div class="flex justify-between items-center">
-          <button class="text-magenta hover:text-electric">Ver más</button>
-          <a href="pago.html" class="bg-magenta text-white px-3 py-1 rounded hover:bg-electric">Comprar</a>
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center pt-24">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <!-- Text -->
+      <div class="md:w-1/2 space-y-6 reveal">
+        <span class="text-accentyellow uppercase tracking-widest text-sm">HELLO!</span>
+        <h1 class="text-4xl sm:text-5xl font-poppins font-bold leading-tight">
+          I'm a <span class="text-accentyellow">FullStack Developer</span><br>
+          <span class="text-white">based in Colombia</span>
+        </h1>
+        <div class="flex space-x-4">
+          <a href="#contact" class="bg-accentyellow text-black px-6 py-3 rounded font-semibold hover:opacity-90 transition">HIRE ME</a>
+          <a href="#projects" class="border border-white px-6 py-3 rounded font-semibold hover:bg-white hover:text-black transition">MY WORKS</a>
         </div>
       </div>
-      <!-- Repetir tarjetas -->
-      <div class="bg-white rounded shadow hover:shadow-lg transition p-4 reveal">
-        <img src="https://via.placeholder.com/400x200" alt="Curso 2" class="rounded mb-4">
-        <h3 class="text-xl font-semibold mb-2">Curso 2</h3>
-        <p class="mb-4">Breve descripción del curso.</p>
-        <div class="flex justify-between items-center">
-          <button class="text-magenta hover:text-electric">Ver más</button>
-          <a href="pago.html" class="bg-magenta text-white px-3 py-1 rounded hover:bg-electric">Comprar</a>
-        </div>
-      </div>
-      <div class="bg-white rounded shadow hover:shadow-lg transition p-4 reveal">
-        <img src="https://via.placeholder.com/400x200" alt="Curso 3" class="rounded mb-4">
-        <h3 class="text-xl font-semibold mb-2">Curso 3</h3>
-        <p class="mb-4">Breve descripción del curso.</p>
-        <div class="flex justify-between items-center">
-          <button class="text-magenta hover:text-electric">Ver más</button>
-          <a href="pago.html" class="bg-magenta text-white px-3 py-1 rounded hover:bg-electric">Comprar</a>
-        </div>
+      <!-- Image -->
+      <div class="md:w-1/2 flex justify-center mt-8 md:mt-0 reveal">
+        <img src="https://via.placeholder.com/450" alt="Developer" class="w-72 md:w-96 lg:w-[28rem] object-cover md:-mr-12">
       </div>
     </div>
   </section>
 
-  <!-- Sección de portafolio con filtros -->
-  <section id="portafolio" class="bg-gray-50 py-16 px-4">
+  <!-- About -->
+  <section id="about" class="py-20 bg-gray-900 reveal">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-poppins font-bold text-center mb-8">Portafolio</h2>
-      <!-- Controles de filtrado -->
-      <div class="flex justify-center space-x-4 mb-8">
-        <button class="filter-btn bg-electric text-white px-4 py-2 rounded" data-filter="all">Todos</button>
-        <button class="filter-btn bg-electric text-white px-4 py-2 rounded" data-filter="web">Web</button>
-        <button class="filter-btn bg-electric text-white px-4 py-2 rounded" data-filter="mobile">Móvil</button>
-      </div>
-      <!-- Galería de proyectos -->
+      <h2 class="text-3xl font-poppins font-bold mb-4">About</h2>
+      <p class="text-gray-300 max-w-3xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="py-20 reveal">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-poppins font-bold mb-4">Resume</h2>
+      <p class="text-gray-300 max-w-3xl">Detalles de experiencia y educación.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 bg-gray-900 reveal">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-poppins font-bold mb-4">Services</h2>
+      <p class="text-gray-300 max-w-3xl">Descripción de los servicios ofrecidos.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 reveal">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-poppins font-bold mb-4">Skills</h2>
+      <p class="text-gray-300 max-w-3xl">Listado de habilidades y tecnologías dominadas.</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 bg-gray-900 reveal">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-poppins font-bold mb-8">Projects</h2>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div class="portfolio-item bg-white rounded shadow overflow-hidden reveal" data-category="web">
-          <img src="https://via.placeholder.com/400x200" alt="Proyecto Web" class="w-full">
-        </div>
-        <div class="portfolio-item bg-white rounded shadow overflow-hidden reveal" data-category="mobile">
-          <img src="https://via.placeholder.com/400x200" alt="Proyecto Móvil" class="w-full">
-        </div>
-        <div class="portfolio-item bg-white rounded shadow overflow-hidden reveal" data-category="web">
-          <img src="https://via.placeholder.com/400x200" alt="Proyecto Web" class="w-full">
-        </div>
+        <div class="bg-white text-black rounded shadow p-4">Proyecto 1</div>
+        <div class="bg-white text-black rounded shadow p-4">Proyecto 2</div>
+        <div class="bg-white text-black rounded shadow p-4">Proyecto 3</div>
       </div>
     </div>
   </section>
 
-  <!-- Script principal -->
+  <!-- Blog -->
+  <section id="blog" class="py-20 reveal">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-poppins font-bold mb-4">My Blog</h2>
+      <p class="text-gray-300 max-w-3xl">Próximamente artículos y noticias.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-gray-900 reveal">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-poppins font-bold mb-4">Contact</h2>
+      <p class="text-gray-300 mb-6">Envíame un mensaje para iniciar tu proyecto.</p>
+      <form class="space-y-4 max-w-lg">
+        <input type="text" placeholder="Name" class="w-full p-2 text-black" />
+        <input type="email" placeholder="Email" class="w-full p-2 text-black" />
+        <textarea placeholder="Message" class="w-full p-2 text-black" rows="4"></textarea>
+        <button class="bg-accentyellow text-black px-6 py-3 rounded font-semibold hover:opacity-90 transition" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>

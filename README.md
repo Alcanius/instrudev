@@ -4,7 +4,7 @@ Este repositorio contiene ejemplos y recursos para ejercicios de desarrollo.
 
 ## onepage
 
-Carpeta con un ejemplo de página web one-page diseñada para promocionar cursos online. Incluye HTML, Tailwind CSS y JavaScript para interactividad.
+Carpeta `onepage` con un sitio one-page de ejemplo. La página principal ahora muestra un portafolio personal con navegación a secciones como Home, About, Resume, Services, Skills, Projects, My Blog y Contact. Se usa Tailwind CSS y JavaScript para animaciones y desplazamiento suave.
 
 También se añadió un servidor Express (`server.js`) que recibe capturas de pantalla de pagos y las guarda en la carpeta `validar_pagos`. Para ejecutarlo es necesario instalar las dependencias y luego iniciar el servidor:
 

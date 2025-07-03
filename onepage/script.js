@@ -10,18 +10,25 @@ links.forEach(link => {
 });
 
 // Animación de revelado al hacer scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('opacity-100', 'translate-y-0');
-    }
-  });
-}, { threshold: 0.1 });
+function setupReveal(selector, hiddenClass) {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100');
+        entry.target.classList.remove(hiddenClass);
+      }
+    });
+  }, { threshold: 0.1 });
 
-document.querySelectorAll('.reveal').forEach(el => {
-  el.classList.add('opacity-0', 'translate-y-4', 'transition', 'duration-700');
-  observer.observe(el);
-});
+  document.querySelectorAll(selector).forEach(el => {
+    el.classList.add('opacity-0', hiddenClass, 'transition', 'duration-700');
+    obs.observe(el);
+  });
+}
+
+setupReveal('.reveal', 'translate-y-4');
+setupReveal('.reveal-left', '-translate-x-4');
+setupReveal('.reveal-right', 'translate-x-4');
 
 // Filtrado de portafolio
 const filterButtons = document.querySelectorAll('.filter-btn');

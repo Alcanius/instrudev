@@ -40,3 +40,32 @@ filterButtons.forEach(btn => {
     });
   });
 });
+
+// Datos de las cuentas bancarias
+const cuentas = {
+  Bancolombia: '0000000000',
+  Daviplata: '1111111111',
+  Davivienda: '2222222222',
+  Nequi: '3333333333',
+  Rappi: '4444444444',
+  BBVA: '5555555555'
+};
+
+// Mostrar número de cuenta según banco seleccionado
+const bancoSelect = document.getElementById('banco');
+if (bancoSelect) {
+  const datosBanco = document.getElementById('datos-banco');
+  const nombreBanco = document.getElementById('nombre-banco');
+  const numeroCuenta = document.getElementById('numero-cuenta');
+
+  bancoSelect.addEventListener('change', () => {
+    const banco = bancoSelect.value;
+    if (cuentas[banco]) {
+      datosBanco.classList.remove('hidden');
+      nombreBanco.textContent = banco;
+      numeroCuenta.textContent = cuentas[banco];
+    } else {
+      datosBanco.classList.add('hidden');
+    }
+  });
+}

@@ -12,3 +12,5 @@ También se añadió un servidor Express (`server.js`) que recibe capturas de pa
 npm install
 npm start
 ```
+
+Edita `pago.html` y `script.js` para colocar tus números reales de cuenta en el objeto `cuentas`.

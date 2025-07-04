@@ -27,3 +27,7 @@ npm start
 Edita `pago.html` y `script.js` para colocar tus números reales de cuenta en el objeto `cuentas`.
 
 Los formularios de contacto e inscripción envían los datos a `guardar_contacto.php` y `guardar_inscripcion.php` respectivamente. Ambos utilizan PDO para insertar la información en una base de datos MySQL; modifica las credenciales en esos archivos antes de usarlos.
+
+## Panel administrativo
+
+Dentro de `onepage/admin` se incluye un pequeño panel para gestionar el sitio. Utiliza credenciales básicas (`admin`/`password`) y requiere la misma base de datos MySQL. Desde allí se pueden crear nuevos cursos que se guardan en la tabla `cursos` y visualizar las inscripciones y mensajes de contacto almacenados. Los cursos creados se cargan dinámicamente en la sección "Cursos" de la página principal mediante `get_cursos.php`.

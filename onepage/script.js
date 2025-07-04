@@ -109,8 +109,9 @@ const formInscripcion = document.getElementById('form-inscripcion');
 const nombreCurso = document.getElementById('nombre-curso');
 const campoCurso = document.getElementById('campo-curso');
 
-if (modal && cerrarModal && formInscripcion) {
-  document.querySelectorAll('.btn-inscripcion').forEach(btn => {
+function initInscripcion(scope = document) {
+  if (!modal || !cerrarModal || !formInscripcion) return;
+  scope.querySelectorAll('.btn-inscripcion').forEach(btn => {
     btn.addEventListener('click', () => {
       const curso = btn.getAttribute('data-curso');
       if (nombreCurso) nombreCurso.textContent = curso;
@@ -118,7 +119,10 @@ if (modal && cerrarModal && formInscripcion) {
       modal.classList.remove('hidden');
     });
   });
+}
 
+if (modal && cerrarModal && formInscripcion) {
+  initInscripcion();
   cerrarModal.addEventListener('click', () => {
     modal.classList.add('hidden');
   });
@@ -204,18 +208,22 @@ const tituloCurso = document.getElementById('modal-curso-titulo');
 const descCurso = document.getElementById('modal-curso-descripcion');
 const costoCurso = document.getElementById('modal-curso-costo');
 
-if (modalCurso && cerrarCurso) {
-  document.querySelectorAll('.btn-vermas').forEach(btn => {
-    btn.addEventListener('click', () => {
-      tituloCurso.textContent = btn.dataset.title;
-      descCurso.textContent = btn.dataset.desc;
-      costoCurso.textContent = `Costo: ${btn.dataset.costo}`;
-      modalCurso.classList.remove('hidden');
+function initVerMas(scope=document){
+  if(!modalCurso||!cerrarCurso)return;
+  scope.querySelectorAll('.btn-vermas').forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      tituloCurso.textContent=btn.dataset.title;
+      descCurso.textContent=btn.dataset.desc;
+      costoCurso.textContent=`Costo: ${btn.dataset.costo}`;
+      modalCurso.classList.remove("hidden");
     });
   });
+}
 
-  cerrarCurso.addEventListener('click', () => {
-    modalCurso.classList.add('hidden');
+if(modalCurso&&cerrarCurso){
+  initVerMas();
+  cerrarCurso.addEventListener("click",()=>{
+    modalCurso.classList.add("hidden");
   });
 }
 
@@ -351,4 +359,64 @@ if (formContacto) {
       .catch(() => lanzarToast('Error al enviar. Intenta de nuevo.', false));
   });
 }
+
+// ---- Cargar cursos dinámicamente ----
+function setupCursoHandlers(scope) {
+  initVerMas(scope);
+  initInscripcion(scope);
+  observeCircles(scope);
+}
+
+function cargarCursos() {
+  const cont = document.getElementById('cursos-container');
+  if (!cont) return;
+  fetch('get_cursos.php')
+    .then(r => r.json())
+    .then(data => {
+      cont.innerHTML = '';
+      data.forEach(c => {
+        const div = document.createElement('div');
+        div.className = 'curso-card group relative bg-[#111827] text-white rounded-2xl shadow-2xl overflow-hidden transform transition hover:-translate-y-2 hover:rotate-1';
+        div.setAttribute('data-aos', 'fade-up');
+        div.innerHTML = `
+          <div class="relative">
+            <img src="${c.imagen}" alt="${c.titulo}" class="w-full h-40 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-accentyellow/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+            <div class="absolute bottom-0 left-0 right-0 bg-white/30 text-black p-2">
+              <h3 class="text-lg font-semibold font-poppins">${c.titulo}</h3>
+              <p class="text-sm text-gray-800">${c.descripcion}</p>
+            </div>
+            <svg class="progress-circle w-10 h-10 absolute top-2 left-2" data-progress="${c.progreso}" viewBox="0 0 36 36">
+              <circle cx="18" cy="18" r="16" stroke="#333" stroke-width="3" fill="none" />
+              <circle class="progress" cx="18" cy="18" r="16" stroke="#FFC107" stroke-width="3" fill="none" stroke-linecap="round" />
+              <text x="18" y="22" text-anchor="middle" font-size="8" fill="white">${c.progreso}%</text>
+            </svg>
+          </div>
+          <div class="p-4 space-y-2">
+            <div class="flex space-x-2">
+              <button class="btn-vermas flex items-center bg-electric px-3 py-2 rounded text-white hover:animate-pulse" data-title="${c.titulo}" data-desc="${c.descripcion_larga}" data-costo="$${c.costo}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                <span class="ml-1">Ver más</span>
+              </button>
+              <a href="pago.html" class="flex items-center bg-magenta px-3 py-2 rounded text-white hover:animate-pulse">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 12h4v8h-4z"/></svg>
+                <span class="ml-1">Comprar</span>
+              </a>
+              <button class="btn-inscripcion flex items-center bg-accentyellow px-3 py-2 rounded text-black hover:animate-pulse" data-curso="${c.titulo}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                <span class="ml-1">Inscribirse</span>
+              </button>
+            </div>
+          </div>`;
+        cont.appendChild(div);
+      });
+      if (window.AOS) AOS.refresh();
+      setupCursoHandlers(cont);
+    })
+    .catch(() => {
+      cont.innerHTML = '<p class="text-red-500">Error al cargar cursos</p>';
+    });
+}
+
+document.addEventListener('DOMContentLoaded', cargarCursos);
 

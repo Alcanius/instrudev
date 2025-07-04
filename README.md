@@ -15,6 +15,8 @@ Cada tarjeta de curso incluye un botón **Inscribirse** que abre un modal para r
 
 La página incorpora además un botón flotante de WhatsApp en la esquina inferior derecha para contacto rápido.
 
+La sección **Contact** fue renovada con un diseño a dos columnas. El formulario usa etiquetas flotantes con iconos y validación en tiempo real; al enviarlo se muestra un toast de confirmación y un mapa incrustado acompaña la información de contacto.
+
 También se añadió un servidor Express (`server.js`) que recibe capturas de pantalla de pagos y las guarda en la carpeta `validar_pagos`. Para ejecutarlo es necesario instalar las dependencias y luego iniciar el servidor:
 
 ```bash

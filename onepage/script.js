@@ -270,3 +270,71 @@ if (modalGaleria) {
   nextGaleria.addEventListener('click', () => mostrarImagen(1));
   cerrarGaleria.addEventListener('click', () => modalGaleria.classList.add('hidden'));
 }
+
+// Validación y envío del formulario de contacto
+const formContacto = document.getElementById('contact-form');
+const inputName = document.getElementById('contact-name');
+const inputEmail = document.getElementById('contact-email');
+const inputMessage = document.getElementById('contact-message');
+const btnSend = document.getElementById('btn-send');
+const toast = document.getElementById('toast');
+
+function mostrarError(input, idMsg, show) {
+  const msg = document.getElementById(idMsg);
+  if (show) {
+    input.classList.add('border-red-500');
+    msg.classList.remove('hidden');
+  } else {
+    input.classList.remove('border-red-500');
+    msg.classList.add('hidden');
+  }
+}
+
+function validarCampos() {
+  let valido = true;
+  if (!inputName.value.trim()) {
+    mostrarError(inputName, 'error-name', true);
+    valido = false;
+  } else {
+    mostrarError(inputName, 'error-name', false);
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(inputEmail.value.trim())) {
+    mostrarError(inputEmail, 'error-email', true);
+    valido = false;
+  } else {
+    mostrarError(inputEmail, 'error-email', false);
+  }
+  if (inputMessage.value.trim().length < 20) {
+    mostrarError(inputMessage, 'error-message', true);
+    valido = false;
+  } else {
+    mostrarError(inputMessage, 'error-message', false);
+  }
+  if (btnSend) btnSend.disabled = !valido;
+  return valido;
+}
+
+function lanzarToast(texto, ok) {
+  if (!toast) return;
+  toast.textContent = texto;
+  toast.className = `fixed bottom-6 right-6 px-4 py-3 rounded text-white ${ok ? 'bg-green-600' : 'bg-red-600'}`;
+  toast.classList.remove('hidden');
+  setTimeout(() => toast.classList.add('hidden'), 5000);
+}
+
+if (formContacto) {
+  [inputName, inputEmail, inputMessage].forEach(inp => inp.addEventListener('input', validarCampos));
+  validarCampos();
+  formContacto.addEventListener('submit', e => {
+    e.preventDefault();
+    if (validarCampos()) {
+      formContacto.reset();
+      validarCampos();
+      lanzarToast('Mensaje enviado con éxito', true);
+    } else {
+      lanzarToast('Error al enviar. Intenta de nuevo.', false);
+    }
+  });
+}
+

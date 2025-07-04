@@ -519,18 +519,41 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 bg-gray-900 reveal">
+  <section id="contact" class="py-20 bg-[#0F172A] reveal">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-poppins font-bold mb-4">Contact</h2>
-      <p class="text-gray-300 mb-6">Envíame un mensaje para iniciar tu proyecto.</p>
-      <form class="space-y-4 max-w-lg">
-        <input type="text" placeholder="Name" class="w-full p-2 text-black" />
-        <input type="email" placeholder="Email" class="w-full p-2 text-black" />
-        <textarea placeholder="Message" class="w-full p-2 text-black" rows="4"></textarea>
-        <button class="bg-accentyellow text-black px-6 py-3 rounded font-semibold hover:opacity-90 transition" type="submit">Send</button>
-      </form>
+      <h2 class="text-3xl font-poppins font-bold text-white mb-2">Contact</h2>
+      <p class="text-gray-300 mb-8">Envíame un mensaje para iniciar tu proyecto.</p>
+      <div class="md:flex md:space-x-8">
+        <!-- Formulario -->
+        <form id="contact-form" role="form" class="md:w-1/2 space-y-6" novalidate>
+          <div class="relative" data-aos="fade-up">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 absolute left-0 top-3 text-gray-400 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9 9 0 1119.305 3.62 9 9 0 015.12 17.804z"/></svg>
+            <input id="contact-name" aria-label="Name" type="text" class="peer w-full bg-transparent border-b border-gray-500 pl-6 py-2 focus:outline-none focus:border-accentyellow" placeholder=" " required>
+            <label for="contact-name" class="absolute left-6 top-2 text-gray-400 transition-all peer-focus:-top-4 peer-focus:text-accentyellow peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400">Name</label>
+            <p class="text-xs text-red-500 mt-1 hidden" id="error-name">Ingresa tu nombre.</p>
+          </div>
+          <div class="relative" data-aos="fade-up">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 absolute left-0 top-3 text-gray-400 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0l-3 3m3-3l-3-3"/></svg>
+            <input id="contact-email" aria-label="Email" type="email" class="peer w-full bg-transparent border-b border-gray-500 pl-6 py-2 focus:outline-none focus:border-accentyellow" placeholder=" " required>
+            <label for="contact-email" class="absolute left-6 top-2 text-gray-400 transition-all peer-focus:-top-4 peer-focus:text-accentyellow peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400">Email</label>
+            <p class="text-xs text-red-500 mt-1 hidden" id="error-email">Ingresa un email válido.</p>
+          </div>
+          <div class="relative" data-aos="fade-up">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 absolute left-0 top-3 text-gray-400 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16h6"/></svg>
+            <textarea id="contact-message" aria-label="Message" rows="4" class="peer w-full bg-transparent border-b border-gray-500 pl-6 py-2 focus:outline-none focus:border-accentyellow placeholder-transparent" placeholder=" " required></textarea>
+            <label for="contact-message" class="absolute left-6 top-2 text-gray-400 transition-all peer-focus:-top-4 peer-focus:text-accentyellow peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400">Message</label>
+            <p class="text-xs text-red-500 mt-1 hidden" id="error-message">Mínimo 20 caracteres.</p>
+          </div>
+          <button id="btn-send" type="submit" class="bg-accentyellow text-black uppercase font-semibold px-6 py-3 rounded shadow hover:bg-yellow-400 transition disabled:opacity-50 disabled:cursor-not-allowed">Send</button>
+        </form>
+        <!-- Mapa -->
+        <div class="md:w-1/2 mt-10 md:mt-0" data-aos="fade-up">
+          <iframe aria-label="Mapa" class="w-full h-64 rounded" src="https://maps.google.com/maps?q=Colombia&t=&z=5&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
     </div>
   </section>
+  <div id="toast" class="fixed bottom-6 right-6 hidden"></div>
 
   <!-- Modal de inscripción -->
   <div id="modal-inscripcion" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">

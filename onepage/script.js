@@ -135,3 +135,41 @@ if (modalCv && btnCv && cerrarCv) {
     modalCv.classList.add('hidden');
   });
 }
+
+// Modal para servicios
+const modalService = document.getElementById('modal-service');
+const closeService = document.getElementById('close-service');
+const serviceTitle = document.getElementById('service-title');
+const serviceText = document.getElementById('service-text');
+
+if (modalService && closeService && serviceTitle && serviceText) {
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => {
+      serviceTitle.textContent = card.dataset.title;
+      serviceText.textContent = card.dataset.text;
+      modalService.classList.remove('hidden');
+    });
+  });
+
+  closeService.addEventListener('click', () => {
+    modalService.classList.add('hidden');
+  });
+}
+
+// Animación de barras de progreso en servicios
+const serviceObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bar = entry.target;
+      const pct = bar.getAttribute('data-progress');
+      bar.style.width = pct + '%';
+      serviceObserver.unobserve(bar);
+    }
+  });
+}, { threshold: 0.6 });
+
+document.querySelectorAll('.progress-bar').forEach(bar => {
+  bar.style.width = '0';
+  bar.classList.add('transition-all', 'duration-700');
+  serviceObserver.observe(bar);
+});

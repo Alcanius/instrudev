@@ -114,8 +114,86 @@
   <!-- Services -->
   <section id="services" class="py-20 bg-gray-900 reveal">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-poppins font-bold mb-4">Services</h2>
-      <p class="text-gray-300 max-w-3xl">Descripción de los servicios ofrecidos.</p>
+      <h2 class="text-3xl font-poppins font-bold mb-8 text-center">Services</h2>
+      <!-- Grid of service cards -->
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Planes de estudio -->
+        <div class="service-card p-6 bg-[#111] rounded-lg shadow-md transform transition hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+             data-title="Planes de estudio a la medida del mercado laboral"
+             data-text="Diseñados y actualizados continuamente para que domines las competencias más demandadas en desarrollo de software.">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accentyellow mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5c-4.012 0-7.64-1.97-9.5-5.08L12 14z" />
+          </svg>
+          <h3 class="text-xl font-bold mb-2">Planes de estudio</h3>
+          <p class="text-gray-300 text-sm">Programas actualizados según el mercado.</p>
+          <div class="h-1 bg-gray-700 rounded overflow-hidden mt-2">
+            <div class="progress-bar h-full bg-accentyellow w-0" data-progress="100"></div>
+          </div>
+        </div>
+
+        <!-- Clases teórico-prácticas -->
+        <div class="service-card p-6 bg-[#111] rounded-lg shadow-md transform transition hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+             data-title="Clases teórico-prácticas y laboratorios guiados"
+             data-text="Programación, bases de datos, desarrollo web y frameworks modernos, todo explicado paso a paso y aplicado en proyectos reales.">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accentyellow mb-4" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4z" />
+          </svg>
+          <h3 class="text-xl font-bold mb-2">Clases prácticas</h3>
+          <p class="text-gray-300 text-sm">Laboratorios guiados paso a paso.</p>
+        </div>
+
+        <!-- Mentoría personalizada -->
+        <div class="service-card p-6 bg-[#111] rounded-lg shadow-md transform transition hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+             data-title="Mentoría personalizada en proyectos"
+             data-text="Acompañamiento cercano para que transformes tus ideas en aplicaciones funcionales, fortalezcas tu portafolio y destaques frente a empleadores.">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accentyellow mb-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 14c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+          </svg>
+          <h3 class="text-xl font-bold mb-2">Mentoría</h3>
+          <p class="text-gray-300 text-sm">Transforma tus ideas en apps funcionales.</p>
+        </div>
+
+        <!-- Talleres y hackathones -->
+        <div class="service-card p-6 bg-[#111] rounded-lg shadow-md transform transition hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+             data-title="Talleres intensivos, hackathones y seminarios"
+             data-text="Espacios dinámicos donde perfeccionarás habilidades, trabajarás en equipo y enfrentarás retos similares a los del mundo profesional.">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accentyellow mb-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <h3 class="text-xl font-bold mb-2">Talleres y hackathones</h3>
+          <p class="text-gray-300 text-sm">Espacios dinámicos y retadores.</p>
+        </div>
+
+        <!-- Recursos didácticos -->
+        <div class="service-card p-6 bg-[#111] rounded-lg shadow-md transform transition hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+             data-title="Recursos didácticos de última generación"
+             data-text="Guías, plantillas y repositorios listos para usar, respaldados por estrategias didácticas innovadoras y las tendencias tecnológicas más recientes.">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accentyellow mb-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+          </svg>
+          <h3 class="text-xl font-bold mb-2">Recursos didácticos</h3>
+          <p class="text-gray-300 text-sm">Plantillas y repositorios listos para usar.</p>
+        </div>
+
+        <!-- Evaluaciones constructivas -->
+        <div class="service-card p-6 bg-[#111] rounded-lg shadow-md transform transition hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+             data-title="Evaluaciones constructivas y feedback continuo"
+             data-text="Pruebas prácticas y revisiones detalladas que te permiten medir tu progreso y mejorar de forma constante.">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accentyellow mb-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+          <h3 class="text-xl font-bold mb-2">Evaluaciones</h3>
+          <p class="text-gray-300 text-sm">Feedback continuo para mejorar.</p>
+          <div class="h-1 bg-gray-700 rounded overflow-hidden mt-2">
+            <div class="progress-bar h-full bg-accentyellow w-0" data-progress="100"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="#services" class="inline-block bg-accentyellow text-black font-semibold uppercase px-6 py-3 rounded hover:bg-yellow-400 transition">Ver todos los servicios</a>
+      </div>
     </div>
   </section>
 
@@ -345,6 +423,18 @@
     <div class="bg-white p-4 rounded w-11/12 max-w-3xl relative">
       <button id="cerrar-cv" class="absolute top-2 right-2 text-black">X</button>
       <embed src="cv.pdf" type="application/pdf" class="w-full h-[80vh]" />
+    </div>
+  </div>
+
+  <!-- Modal Service -->
+  <div id="modal-service" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white text-black p-6 rounded w-11/12 max-w-md">
+      <h3 id="service-title" class="text-xl font-bold mb-2"></h3>
+      <p id="service-text" class="mb-4"></p>
+      <div class="text-right space-x-2">
+        <button type="button" id="close-service" class="px-4 py-2 border rounded">Cerrar</button>
+        <a href="#services" class="bg-accentyellow text-black px-4 py-2 rounded font-semibold">Leer más</a>
+      </div>
     </div>
   </div>
 

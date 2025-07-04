@@ -94,3 +94,26 @@ document.querySelectorAll('[data-percentage]').forEach(bar => {
   bar.classList.add('transition-all', 'duration-700');
   skillObserver.observe(bar);
 });
+
+// Modal de inscripción
+const modal = document.getElementById('modal-inscripcion');
+const cerrarModal = document.getElementById('cerrar-inscripcion');
+const formInscripcion = document.getElementById('form-inscripcion');
+
+if (modal && cerrarModal && formInscripcion) {
+  document.querySelectorAll('.btn-inscripcion').forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+  });
+
+  cerrarModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  formInscripcion.addEventListener('submit', e => {
+    e.preventDefault();
+    modal.classList.add('hidden');
+    alert('Datos enviados');
+  });
+}

@@ -34,8 +34,15 @@ setupReveal('.reveal-right', 'translate-x-4');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const items = document.querySelectorAll('.portfolio-item');
 
+// botón activo por defecto
+if (filterButtons.length) {
+  filterButtons[0].classList.add('bg-accentyellow');
+}
+
 filterButtons.forEach(btn => {
   btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('bg-accentyellow'));
+    btn.classList.add('bg-accentyellow');
     const filter = btn.getAttribute('data-filter');
     items.forEach(item => {
       const category = item.getAttribute('data-category');
@@ -232,3 +239,34 @@ const circleObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('.progress-circle').forEach(svg => {
   circleObserver.observe(svg);
 });
+
+// Galería de portafolio
+const modalGaleria = document.getElementById('modal-galeria');
+const cerrarGaleria = document.getElementById('cerrar-galeria');
+const imgGaleria = document.getElementById('galeria-imagen');
+const descGaleria = document.getElementById('galeria-desc');
+const prevGaleria = document.getElementById('prev-galeria');
+const nextGaleria = document.getElementById('next-galeria');
+let galeriaImgs = [];
+let galeriaIndex = 0;
+
+if (modalGaleria) {
+  document.querySelectorAll('.open-gallery').forEach(btn => {
+    btn.addEventListener('click', () => {
+      galeriaImgs = btn.dataset.images.split(',');
+      galeriaIndex = 0;
+      imgGaleria.src = galeriaImgs[galeriaIndex];
+      descGaleria.textContent = btn.dataset.desc || '';
+      modalGaleria.classList.remove('hidden');
+    });
+  });
+
+  function mostrarImagen(delta) {
+    galeriaIndex = (galeriaIndex + delta + galeriaImgs.length) % galeriaImgs.length;
+    imgGaleria.src = galeriaImgs[galeriaIndex];
+  }
+
+  prevGaleria.addEventListener('click', () => mostrarImagen(-1));
+  nextGaleria.addEventListener('click', () => mostrarImagen(1));
+  cerrarGaleria.addEventListener('click', () => modalGaleria.classList.add('hidden'));
+}

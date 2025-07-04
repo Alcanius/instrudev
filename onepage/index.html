@@ -421,59 +421,91 @@
   </section>
 
   <!-- Portafolio -->
-  <section id="portfolio" class="py-20 bg-gray-900 reveal">
+  <section id="portfolio" class="py-20 bg-[#0F172A] reveal">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-poppins font-bold mb-8">Portafolio</h2>
+      <h2 class="text-center text-3xl font-poppins font-bold text-white mb-8">Portafolio</h2>
       <!-- Filtros -->
-      <div class="flex space-x-4 mb-8">
-        <button class="filter-btn bg-white text-black px-4 py-2 rounded" data-filter="all">Todos</button>
-        <button class="filter-btn bg-white text-black px-4 py-2 rounded" data-filter="web">Web</button>
-        <button class="filter-btn bg-white text-black px-4 py-2 rounded" data-filter="mobile">Móvil</button>
-        <button class="filter-btn bg-white text-black px-4 py-2 rounded" data-filter="design">Diseño</button>
+      <div class="flex justify-center space-x-4 mb-8">
+        <button class="filter-btn px-4 py-2 rounded bg-white text-black" data-filter="all">Todos</button>
+        <button class="filter-btn px-4 py-2 rounded bg-white text-black" data-filter="web">Web</button>
+        <button class="filter-btn px-4 py-2 rounded bg-white text-black" data-filter="mobile">Móvil</button>
+        <button class="filter-btn px-4 py-2 rounded bg-white text-black" data-filter="design">Diseño</button>
       </div>
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Grid de proyectos -->
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
         <!-- Proyecto 1 -->
-        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="web">
-          <img src="https://via.placeholder.com/600x400" alt="Proyecto web" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
-          <div class="p-4">
-            <h3 class="text-xl font-bold">Proyecto Web</h3>
+        <div class="portfolio-item group relative bg-[#111827] rounded-2xl shadow-2xl overflow-hidden transform transition hover:-translate-y-1" data-category="web" data-aos="fade-up">
+          <span class="absolute top-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">Web</span>
+          <img src="https://via.placeholder.com/600x400" alt="Proyecto web" class="w-full h-48 object-cover">
+          <div class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition">
+            <h3 class="text-lg font-semibold mb-2">Proyecto Web</h3>
+            <div class="flex space-x-4">
+              <button class="open-gallery relative" data-images="https://via.placeholder.com/800x600,https://via.placeholder.com/801x601" data-desc="Proyecto Web">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accentyellow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-4.553a3.6 3.6 0 10-5.094-5.094L10 5l5 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10L9 16l-4.553-4.553a3.6 3.6 0 115.094-5.094L15 10z"/></svg>
+                <span class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-xs bg-white text-black rounded opacity-0 group-hover:opacity-100">Ver galería</span>
+              </button>
+              <a href="#" class="relative" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accentyellow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3l7 7m0 0l-7 7m7-7H3"/></svg>
+                <span class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-xs bg-white text-black rounded opacity-0 group-hover:opacity-100">Demo en vivo</span>
+              </a>
+              <a href="#" class="relative" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accentyellow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11l9-5m-9 5L3 6m9 5v11"/></svg>
+                <span class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-xs bg-white text-black rounded opacity-0 group-hover:opacity-100">Código fuente</span>
+              </a>
+            </div>
           </div>
         </div>
+
         <!-- Proyecto 2 -->
-        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="mobile">
-          <img src="https://via.placeholder.com/600x400" alt="Proyecto móvil" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
-          <div class="p-4">
-            <h3 class="text-xl font-bold">Proyecto Móvil</h3>
+        <div class="portfolio-item group relative bg-[#111827] rounded-2xl shadow-2xl overflow-hidden transform transition hover:-translate-y-1" data-category="mobile" data-aos="fade-up">
+          <span class="absolute top-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">Móvil</span>
+          <img src="https://via.placeholder.com/600x401" alt="Proyecto móvil" class="w-full h-48 object-cover">
+          <div class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition">
+            <h3 class="text-lg font-semibold mb-2">Proyecto Móvil</h3>
+            <div class="flex space-x-4">
+              <button class="open-gallery relative" data-images="https://via.placeholder.com/802x602,https://via.placeholder.com/803x603" data-desc="Proyecto Móvil">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accentyellow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-4.553a3.6 3.6 0 10-5.094-5.094L10 5l5 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10L9 16l-4.553-4.553a3.6 3.6 0 115.094-5.094L15 10z"/></svg>
+                <span class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-xs bg-white text-black rounded opacity-0 group-hover:opacity-100">Ver galería</span>
+              </button>
+              <a href="#" class="relative" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accentyellow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3l7 7m0 0l-7 7m7-7H3"/></svg>
+                <span class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-xs bg-white text-black rounded opacity-0 group-hover:opacity-100">Demo en vivo</span>
+              </a>
+              <a href="#" class="relative" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accentyellow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11l9-5m-9 5L3 6m9 5v11"/></svg>
+                <span class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-xs bg-white text-black rounded opacity-0 group-hover:opacity-100">Código fuente</span>
+              </a>
+            </div>
           </div>
         </div>
+
         <!-- Proyecto 3 -->
-        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="design">
-          <img src="https://via.placeholder.com/600x400" alt="Proyecto diseño" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
-          <div class="p-4">
-            <h3 class="text-xl font-bold">Proyecto Diseño</h3>
+        <div class="portfolio-item group relative bg-[#111827] rounded-2xl shadow-2xl overflow-hidden transform transition hover:-translate-y-1" data-category="design" data-aos="fade-up">
+          <span class="absolute top-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">Diseño</span>
+          <img src="https://via.placeholder.com/600x402" alt="Proyecto diseño" class="w-full h-48 object-cover">
+          <div class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition">
+            <h3 class="text-lg font-semibold mb-2">Proyecto Diseño</h3>
+            <div class="flex space-x-4">
+              <button class="open-gallery relative" data-images="https://via.placeholder.com/804x604,https://via.placeholder.com/805x605" data-desc="Proyecto Diseño">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accentyellow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-4.553a3.6 3.6 0 10-5.094-5.094L10 5l5 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10L9 16l-4.553-4.553a3.6 3.6 0 115.094-5.094L15 10z"/></svg>
+                <span class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-xs bg-white text-black rounded opacity-0 group-hover:opacity-100">Ver galería</span>
+              </button>
+              <a href="#" class="relative" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accentyellow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3l7 7m0 0l-7 7m7-7H3"/></svg>
+                <span class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-xs bg-white text-black rounded opacity-0 group-hover:opacity-100">Demo en vivo</span>
+              </a>
+              <a href="#" class="relative" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accentyellow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11l9-5m-9 5L3 6m9 5v11"/></svg>
+                <span class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-xs bg-white text-black rounded opacity-0 group-hover:opacity-100">Código fuente</span>
+              </a>
+            </div>
           </div>
         </div>
-        <!-- Proyecto 4 -->
-        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="web">
-          <img src="https://via.placeholder.com/600x400" alt="Proyecto web" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
-          <div class="p-4">
-            <h3 class="text-xl font-bold">Proyecto Web 2</h3>
-          </div>
-        </div>
-        <!-- Proyecto 5 -->
-        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="mobile">
-          <img src="https://via.placeholder.com/600x400" alt="Proyecto móvil" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
-          <div class="p-4">
-            <h3 class="text-xl font-bold">Proyecto Móvil 2</h3>
-          </div>
-        </div>
-        <!-- Proyecto 6 -->
-        <div class="portfolio-item bg-white text-black rounded shadow overflow-hidden" data-category="design">
-          <img src="https://via.placeholder.com/600x400" alt="Proyecto diseño" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105">
-          <div class="p-4">
-            <h3 class="text-xl font-bold">Proyecto Diseño 2</h3>
-          </div>
-        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="#" class="inline-block bg-accentyellow text-black font-semibold px-6 py-3 rounded hover:bg-yellow-400 transition">VER MÁS PROYECTOS</a>
       </div>
     </div>
   </section>
@@ -551,6 +583,19 @@
       <h3 id="modal-curso-titulo" class="text-xl font-bold mb-2"></h3>
       <p id="modal-curso-descripcion" class="mb-4"></p>
       <p id="modal-curso-costo" class="font-semibold"></p>
+    </div>
+  </div>
+
+  <!-- Modal Galería -->
+  <div id="modal-galeria" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+    <div class="bg-white text-black p-4 rounded w-11/12 max-w-2xl relative">
+      <button id="cerrar-galeria" class="absolute top-2 right-2">X</button>
+      <img id="galeria-imagen" src="" alt="Galería" class="w-full h-80 object-contain mb-2">
+      <p id="galeria-desc" class="mb-4"></p>
+      <div class="flex justify-between">
+        <button id="prev-galeria" class="px-4 py-2 border rounded">Prev</button>
+        <button id="next-galeria" class="px-4 py-2 border rounded">Next</button>
+      </div>
     </div>
   </div>
 

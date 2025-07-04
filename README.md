@@ -9,6 +9,8 @@ La sección de habilidades incluye barras de progreso animadas que se llenan cua
 
 La sección **Services** muestra seis tarjetas con información de los planes de estudio, clases prácticas, mentorías y más. Cada tarjeta se eleva al pasar el cursor y, al hacer clic, despliega un modal con detalles adicionales. Las tarjetas de "Planes de estudio" y "Evaluaciones" incluyen además barras de progreso animadas.
 
+La sección **Cursos** fue mejorada con un diseño en cuadrícula responsiva. Las tarjetas muestran un degradado amarillo al hacer hover, botones con iconos y animación *pulse*, efecto de inclinación 3D y un círculo de popularidad. Al pulsar **Ver más** se abre un modal con información extra y precio, y **Inscribirse** despliega un acordeón con un pequeño formulario.
+
 Cada tarjeta de curso incluye un botón **Inscribirse** que abre un modal para registrar nombre completo, teléfono, correo, género y edad. El nombre del curso seleccionado aparece en la parte superior del formulario.
 
 La página incorpora además un botón flotante de WhatsApp en la esquina inferior derecha para contacto rápido.

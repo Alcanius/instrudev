@@ -173,3 +173,62 @@ document.querySelectorAll('.progress-bar').forEach(bar => {
   bar.classList.add('transition-all', 'duration-700');
   serviceObserver.observe(bar);
 });
+
+// Inicializar AOS para animaciones de entrada
+if (window.AOS) {
+  AOS.init({ once: true });
+}
+
+// Modal de detalles de curso
+const modalCurso = document.getElementById('modal-curso');
+const cerrarCurso = document.getElementById('cerrar-curso');
+const tituloCurso = document.getElementById('modal-curso-titulo');
+const descCurso = document.getElementById('modal-curso-descripcion');
+const costoCurso = document.getElementById('modal-curso-costo');
+
+if (modalCurso && cerrarCurso) {
+  document.querySelectorAll('.btn-vermas').forEach(btn => {
+    btn.addEventListener('click', () => {
+      tituloCurso.textContent = btn.dataset.title;
+      descCurso.textContent = btn.dataset.desc;
+      costoCurso.textContent = `Costo: ${btn.dataset.costo}`;
+      modalCurso.classList.remove('hidden');
+    });
+  });
+
+  cerrarCurso.addEventListener('click', () => {
+    modalCurso.classList.add('hidden');
+  });
+}
+
+// Acordeón de inscripción dentro de las tarjetas
+document.querySelectorAll('.btn-acordeon').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const form = btn.closest('.curso-card').querySelector('.form-inscripcion');
+    form.classList.toggle('hidden');
+  });
+});
+
+// Animar círculos de progreso en cursos
+const circleObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const svg = entry.target;
+      const pct = parseInt(svg.dataset.progress, 10);
+      const circle = svg.querySelector('circle.progress');
+      const radius = circle.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+      circle.style.strokeDasharray = circumference;
+      circle.style.strokeDashoffset = circumference;
+      setTimeout(() => {
+        circle.style.transition = 'stroke-dashoffset 1s ease';
+        circle.style.strokeDashoffset = circumference - pct / 100 * circumference;
+      }, 100);
+      circleObserver.unobserve(svg);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.progress-circle').forEach(svg => {
+  circleObserver.observe(svg);
+});

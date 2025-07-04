@@ -99,10 +99,13 @@ document.querySelectorAll('[data-percentage]').forEach(bar => {
 const modal = document.getElementById('modal-inscripcion');
 const cerrarModal = document.getElementById('cerrar-inscripcion');
 const formInscripcion = document.getElementById('form-inscripcion');
+const nombreCurso = document.getElementById('nombre-curso');
 
 if (modal && cerrarModal && formInscripcion) {
   document.querySelectorAll('.btn-inscripcion').forEach(btn => {
     btn.addEventListener('click', () => {
+      const curso = btn.getAttribute('data-curso');
+      if (nombreCurso) nombreCurso.textContent = curso;
       modal.classList.remove('hidden');
     });
   });
@@ -115,5 +118,20 @@ if (modal && cerrarModal && formInscripcion) {
     e.preventDefault();
     modal.classList.add('hidden');
     alert('Datos enviados');
+  });
+}
+
+// Modal CV
+const modalCv = document.getElementById('modal-cv');
+const btnCv = document.getElementById('btn-cv');
+const cerrarCv = document.getElementById('cerrar-cv');
+
+if (modalCv && btnCv && cerrarCv) {
+  btnCv.addEventListener('click', () => {
+    modalCv.classList.remove('hidden');
+  });
+
+  cerrarCv.addEventListener('click', () => {
+    modalCv.classList.add('hidden');
   });
 }
